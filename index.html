@@ -4,21 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jules Le Corre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
     <main>
-        <main-right>
-            <div class="identity">
-                <img src="" alt="">
-                <div class="title">
-                    <p class="name">jules le corre</p>
-                    <p class="desc"></p>
-                </div>
+        <section class="projects">
+
+            <div class="left-container">
+
+                <img src="img/background-top.png" class="background-top">
+
+                <section class="left">
+        
+                    <div class="identity">
+                        <img src="img/photo.png" alt="">
+                        <div class="title">
+                            <p class="name">Jules Le Corre</p>
+                            <p class="desc">Développeur Full Stack Junior</p>
+                        </div>
+                    </div>
+                    
+                    <nav>
+                        <ul>
+                            <li class="active">
+                                <div class="line"></div>
+                                <p class="summary">Projets</p>
+                            </li>
+                            <li>
+                                <div class="line"></div>
+                                <p class="summary">Compétences</p>
+                            </li>
+                            <li>
+                                <div class="line"></div>
+                                <p class="summary">Expériences</p>
+                            </li>
+                        </ul>
+                    </nav>
+        
+                    <div class="social-media">
+                        <img src="img/github.png" alt="">
+                        <img src="img/linkedin.png" alt="">
+                        <img src="img/instagram.png" alt="">
+                    </div>
+        
+                </section>
+
+                <img src="img/background-bottom.png" class="background-bottom">
+
             </div>
-        </main-right>
-        <main-left></main-left>
+
+            <section class="right">
+                <ul class="projects-list">
+                    <li>memory</li>
+                    <li>sutom</li>
+                    <li>enchères</li>
+                    <li>loco</li>
+                </ul>
+            </section>
+
+        </section>
+
     </main>
+    <script>
+        const toggleSwitch = document.querySelector('#checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }    
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme);
+    </script>
 </body>
 </html>
