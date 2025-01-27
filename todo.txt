@@ -1,0 +1,8 @@
+- curseur souris
+- rond qui suit le curseur
+- dark thème
+- animation sur les différents composants
+- scroll naviation
+- flèche navigation
+- faire la page projet
+

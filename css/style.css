@@ -1,13 +1,6 @@
 :root{
-    --primary-color: #F3D753;
+    --primary-color: #FFDA2B;
     --secondary-color: #101214;
-    --background-color: var(--primary-color);
-    --text-color: var(--secondary-color);
-}
-
-[data-theme="dark"] {
-    --primary-color: #101214;
-    --secondary-color: #F3D753;
     --background-color: var(--primary-color);
     --text-color: var(--secondary-color);
 }
@@ -41,9 +34,11 @@ body{
 
 main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+    width: fit-content;
+    width: 100%;
 }
 
 .projects{
@@ -54,8 +49,15 @@ main{
 .left-container{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100vh;
+    width: 50%;
+    position: fixed;
+}
+
+.right-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .background-top{
@@ -115,11 +117,7 @@ nav li{
     cursor: pointer;
 }
 
-.right{
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.projects{
     padding-right: 75px;
 }
 
@@ -144,65 +142,50 @@ nav li{
     cursor: pointer;
 }
 
-/* Theme Switch Styles */
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.theme-switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.theme-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
+ /* Écran de chargement */
+ #loading-screen {
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-}
+    width: 100%;
+    height: 100%;
+    background-color: #101214;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-}
+  /* Conteneur pour les animations */
+  .logo-container {
+    animation: zoom 2s ease-in-out forwards; /* Agrandissement */
+  }
 
-input:checked + .slider {
-    background-color: var(--secondary-color);
-}
+  /* Logo avec rotation */
+  .logo {
+    width: 75px;
+    height: 75px;
+    background-image: url('../img/favicon-yellow-svg.svg'); /* Remplacez par l'URL de votre logo */
+    background-size: cover;
+    background-position: center;
+    animation: spin 2.5s ease-in-out; 
+  } 
 
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-.theme-label {
-    color: var(--text-color);
-    font-size: 14px;
+  /* Animation*/
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(180deg);
+    } 
+    50% {
+      transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }

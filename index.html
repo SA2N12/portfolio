@@ -9,86 +9,77 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
-    <main>
-        <section class="projects">
-
-            <div class="left-container">
-
-                <img src="img/background-top.png" class="background-top">
-
-                <section class="left">
-        
-                    <div class="identity">
-                        <img src="img/photo.png" alt="">
-                        <div class="title">
-                            <p class="name">Jules Le Corre</p>
-                            <p class="desc">Développeur Full Stack Junior</p>
-                        </div>
+    <div id="loading-screen">
+        <div class="logo-container">
+          <div class="logo"></div>
+        </div>
+    </div>
+    <main id="main-content">
+        <section class="left-container">
+            <img src="img/background-top.png" class="background-top">
+            <section class="left">
+                <div class="identity">
+                    <img src="img/photo.png" alt="">
+                    <div class="title">
+                        <p class="name">Jules Le Corre</p>
+                        <p class="desc">Développeur Full Stack Junior</p>
                     </div>
-                    
-                    <nav>
-                        <ul>
-                            <li class="active">
-                                <div class="line"></div>
-                                <p class="summary">Projets</p>
-                            </li>
-                            <li>
-                                <div class="line"></div>
-                                <p class="summary">Compétences</p>
-                            </li>
-                            <li>
-                                <div class="line"></div>
-                                <p class="summary">Expériences</p>
-                            </li>
-                        </ul>
-                    </nav>
-        
-                    <div class="social-media">
-                        <img src="img/github.png" alt="">
-                        <img src="img/linkedin.png" alt="">
-                        <img src="img/instagram.png" alt="">
-                    </div>
-        
-                </section>
-
-                <img src="img/background-bottom.png" class="background-bottom">
-
-            </div>
-
-            <section class="right">
+                </div>
+                <nav>
+                    <ul>
+                        <li class="active">
+                            <div class="line"></div>
+                            <p class="summary">Projets</p>
+                        </li>
+                        <li>
+                            <div class="line"></div>
+                            <p class="summary">Compétences</p>
+                        </li>
+                        <li>
+                            <div class="line"></div>
+                            <p class="summary">Expériences</p>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="social-media">
+                    <img src="img/github.png" alt="">
+                    <img src="img/linkedin.png" alt="">
+                    <img src="img/instagram.png" alt="">
+                </div>
+            </section>
+            <img src="img/background-bottom.png" class="background-bottom">
+        </section>
+        <section class="right-container">
+            <section class="projects">
                 <ul class="projects-list">
+                    <li>memory</li>
+                    <li>sutom</li>
+                    <li>enchères</li>
+                    <li>loco</li>
                     <li>memory</li>
                     <li>sutom</li>
                     <li>enchères</li>
                     <li>loco</li>
                 </ul>
             </section>
-
         </section>
-
     </main>
     <script>
-        const toggleSwitch = document.querySelector('#checkbox');
-        const currentTheme = localStorage.getItem('theme');
+        // Simuler un temps de chargement (par exemple 3 secondes)
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            const mainContent = document.getElementById('main-content');
 
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'dark') {
-                toggleSwitch.checked = true;
-            }
-        }
-
-        function switchTheme(e) {
-            if (e.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }    
-        }
-
-        toggleSwitch.addEventListener('change', switchTheme);
+            // Supprimer l'écran de chargement
+            loadingScreen.style.transition = 'opacity 0.5s ease';
+            loadingScreen.style.opacity = '0';
+        
+            // Retirer l'écran de chargement du DOM après l'animation
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                mainContent.classList.add('loaded');
+            }, 500); // Correspond au délai de l'animation CSS
+        }, 2500); // Temps de chargement simulé
     </script>
 </body>
 </html>
