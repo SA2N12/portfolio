@@ -1,8 +1,8 @@
-- curseur souris
-- rond qui suit le curseur
+- scroll naviation	
+- changer curseur
 - dark thème
-- animation sur les différents composants
-- scroll naviation
-- flèche navigation
+- animation composants au démarrage
+- animation composants au survol
 - faire la page projet
+- faire le mobile
 

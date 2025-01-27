@@ -9,9 +9,19 @@ p, h1, h2, h3, h4, h5, h6, li, ul, span, a{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#circle{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: solid 2px var(--secondary-color);
+    border-radius: 50%;
+    pointer-events: none; /* Pour que le cercle n'interfère pas avec les clics */
+}
+
 body{
     background-color: var(--background-color);
     transition: background-color 0.3s ease;
+    cursor: url('../img/cursor.png'), auto ;
 }
 
 .identity{
@@ -101,11 +111,27 @@ nav li{
     align-items: center;
     cursor: pointer;
     gap: 12px;
-    opacity: 75%;
+    opacity: 70%;
+}
+
+nav li .line{
+    transition: all 0.3s ease;
+}
+
+nav li:hover{
+    opacity: 100%;
+}
+
+nav li:hover .line{
+    width: 80px;
 }
 
 .active .line{
     width: 80px;
+}
+
+.active{
+    opacity: 100%;
 }
 
 .social-media{
@@ -119,6 +145,10 @@ nav li{
 
 .projects{
     padding-right: 75px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects-list{

@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
+    <div id="circle"></div>
     <div id="loading-screen">
         <div class="logo-container">
           <div class="logo"></div>
@@ -50,36 +51,34 @@
             <img src="img/background-bottom.png" class="background-bottom">
         </section>
         <section class="right-container">
-            <section class="projects">
-                <ul class="projects-list">
-                    <li>memory</li>
-                    <li>sutom</li>
-                    <li>enchères</li>
-                    <li>loco</li>
-                    <li>memory</li>
-                    <li>sutom</li>
-                    <li>enchères</li>
-                    <li>loco</li>
-                </ul>
-            </section>
+            <div class="sections-container">
+                <section class="projects">
+                    <ul class="projects-list">
+                        <li>memory</li>
+                        <li>sutom</li>
+                        <li>enchères</li>
+                        <li>loco</li>
+                    </ul>
+                </section>
+                <section class="projects">
+                    <ul class="projects-list">
+                        <li>memory</li>
+                        <li>sutom</li>
+                        <li>enchères</li>
+                        <li>loco</li>
+                    </ul>
+                </section>
+                <section class="projects">
+                    <ul class="projects-list">
+                        <li>memory</li>
+                        <li>sutom</li>
+                        <li>enchères</li>
+                        <li>loco</li>
+                    </ul>
+                </section>
+            </div>
         </section>
     </main>
-    <script>
-        // Simuler un temps de chargement (par exemple 3 secondes)
-        setTimeout(() => {
-            const loadingScreen = document.getElementById('loading-screen');
-            const mainContent = document.getElementById('main-content');
-
-            // Supprimer l'écran de chargement
-            loadingScreen.style.transition = 'opacity 0.5s ease';
-            loadingScreen.style.opacity = '0';
-        
-            // Retirer l'écran de chargement du DOM après l'animation
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-                mainContent.classList.add('loaded');
-            }, 500); // Correspond au délai de l'animation CSS
-        }, 2500); // Temps de chargement simulé
-    </script>
+    <script src="js/app.js"></script>
 </body>
 </html>
